@@ -1,9 +1,16 @@
 const express = require("express");
 const devpun = require("devpun");
+const cors = require('cors');
 const objOfJokes = require("devpun/jokes.json");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+app.use(
+  cors({
+    origin: ['http://localhost:3000', '<deployed URL>'],
+  })
+);
 
 app.get('/', (_req, res) => {
   res.json(devpun.list());
