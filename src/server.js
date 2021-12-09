@@ -8,7 +8,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', '<deployed URL>'],
+    origin: ['http://localhost:3000', 'https://greatest-dev-jokes.netlify.app'],
   })
 );
 
